@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+ 	body
+        {
+	    background-image: url('../static/images/wadaw.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+	    opacity: 0.8;
+            color: whites
+            font-family: sans-serif;
+        }
+	img {
+  	    opacity: 0.8;
+	}
+    </style>
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>Connector Prediction</title>
+    <link rel="icon" href="{{ url_for('static', filename='tedxjakarta.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Bootstrap core CSS -->
+   
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+  <table background = "../static/images/wadaw.jpg">
+  <h1 style="color:white;"><center>Connector Prediction</center></h1>
+  <center><img src="../static/images/tedxjakarta.png" width="140" height="50"></center>
+  <br>
+  <div class="container">
+    <form action="{{ url_for('predict')}}"method="POST" role="form" class="form-horizontal">
+      <div class="form-group">
+        <label style="color:white;" for="InputGender">Choose Gender 1 for Male and 0 for Female</label>
+        <select class="form-control" id="InputGender" name="gender">
+          <option>1</option>
+          <option>0</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label style="color:white;" for="Following">Following</label>
+        <input type="text" class="form-control" id="InputName" placeholder="Input Jumlah Following" name="following" required="required">
+	<label style="color:white;" for="Follower">Follower</label>
+        <input type="text" class="form-control" id="InputName" placeholder="Input Jumlah Follower" name="follower" required="required">
+	<label style="color:white;" for="Total Tweet">Total Tweet</label>
+        <input type="text" class="form-control" id="InputName" placeholder="Input Total Tweet" name="totaltweet" required="required">
+      </div>
+      <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+    <br>
+      <label style="color:white;"> {{prediction_text}} </label>
+    <br>
+  <h7 style="color:white;">1 : Connector || 0 : Non Connector</h7>
+  
+  <h7><center>Powered by IYKRA</center></h7>
+  <center><img src="../static/images/iykra.png" width="40" height="30"></center>
+  </div>
+</body>
+</html>	

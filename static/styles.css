@@ -1,0 +1,15 @@
+body {
+	margin: 50px;
+       
+}
+p {
+ color: red;
+}
+
+.bg {
+  background-image: url("../static/images/background.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
